@@ -17,7 +17,7 @@ template <typename T> class ListArray : public List <T> {
 
 			 //Copia el contenido del array actual en el nuevo
 			 
-			 for (int i = 0 ; min (max, new_size) ; i++) {
+			 for (int i = 0 ; i < min (max, new_size) ; i++) {
 				 new_array [i] = arr [i];
 			 }
 
@@ -51,9 +51,12 @@ template <typename T> class ListArray : public List <T> {
 				resize (max * 2);
 			}
 			
-			//Si pos < n
-			for (int i = n; i > pos; i--) {
-				arr[i] = arr [i - 1];
+			if (pos == n) {
+				arr [pos] = e;
+			} else {
+				for (int i = n; i >= pos; i--) {
+					arr[i] = arr [i - 1];
+				}
 			}
 
 			arr[pos] = e;
@@ -133,13 +136,13 @@ template <typename T> class ListArray : public List <T> {
 
 		friend ostream& operator<<(ostream &out, const ListArray<T> &list) {
 		       	//Sobrecarga del operador << 
-			out << " Array : [";
+			out << " List => [" << endl;
 			//Hasta que haya escrito el array entero
 			for (int i = 0; i < list.n; i++) {
-				out << list.arr[i] << "," ;
+				out <<"\n" << "  " << list.arr[i] << endl ;
 			}
 
-			out << "]";
+			out << "\n" << "]" << endl;
 			return out;
 		}
 };
