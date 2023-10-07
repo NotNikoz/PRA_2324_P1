@@ -106,11 +106,8 @@ template <typename T> class ListArray : public List <T> {
 		}
 
 		bool empty () {
-		//Devolverá true si la lista tiene al menos un elemento o más
-			if (size () > 0) {
-				return true;
-			} //false si tiene 0 elementos
-			return false;
+		//Devolverá true si esta vacio
+			return size() == 0;
 		}
 
 		int size () {
