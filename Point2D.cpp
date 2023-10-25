@@ -14,7 +14,7 @@ Point2D::Point2D (double x, double y) {
 
 double Point2D::distance (const Point2D &a, const Point2D &b) { //Calcula la distancia euclidiana entre dos puntos
 	
-	return sqrt (pow((a.x - b.x),2)) + (pow((a.y - b.y),2));
+	return sqrt (pow((a.x - b.x),2) + pow((a.y - b.y),2));
 
 }
 
@@ -33,7 +33,7 @@ bool operator!=(const Point2D &a, const Point2D &b) { //Sobrecarga global del op
 
 ostream& operator<<(ostream &out, const Point2D &p) { //Sobrecarga global del operador <<
 								  
-	out << "(" << p.x << "," << p.y << ")" << endl;
+	out << "(" << p.x << "," << p.y << ")";
 	return out;
 
 }
