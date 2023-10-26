@@ -21,5 +21,8 @@ Point2D.o: Point2D.h Point2D.cpp
 Shape.o: Shape.h Shape.cpp
 	g++ -c Shape.cpp
 
+Circle.o: Circle.h Circle.cpp
+	g++ -c Circle.cpp
+
 clean:
 	rm -r *.o *.gch bin
