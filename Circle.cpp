@@ -1,6 +1,8 @@
+#include <iostream>
+#include <ostream>
 #include <cmath>
-#include <iomanip>
 #include "Circle.h"
+
 
 using namespace std;
 
@@ -24,12 +26,15 @@ void Circle :: translate (double incX, double incY) {
 }
 
 void Circle :: print () {
-	cout << color;
-	cout << center.x << " " << center.y << endl;
-	cout << radius << endl;
+	cout << *this;
 }
 
-Circle :: Circle () { center.x == 0; center.y == 0; radius == 1;}
+Circle :: Circle () { 
+	
+	center = Point2D (0,0);
+	radius = 1.0;
+
+}
 
 Circle :: Circle (string color, Point2D center, double radius) {
 
@@ -66,7 +71,7 @@ void Circle :: set_radius (double r) {
 ostream& operator << (ostream &out, const Circle &c) {
 
 	out << "[Circle: color = " << c.color << "; center = (" 
-		<< c.center.x << ", " << c.center.y << ") radius = " 
+		<< c.center.x << ", " << c.center.y << "); radius = " 
 		<< c.radius << "]" << endl;
 
 	return out;
