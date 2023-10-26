@@ -100,25 +100,12 @@ void Rectangle :: set_vertices (Point2D* vertices) {
 } 
 
 Rectangle& Rectangle::operator=(const Rectangle &r) {
-    if (this == &r) {
-        // No es necesario copiar
-        return *this;
-    }
-
-    // Copiar los datos de r a *this
-    if (vs) {
-        delete[] vs; 
-    }
-    vs = new Point2D[N_VERTICES]{
-        r.vs[0],
-        r.vs[1],
-        r.vs[2],
-        r.vs[3]
-    };
-
-    set_color(r.color);
-
-    return *this; 
+    // Copiar los datos de r a this
+	for(int i=0; i< N_VERTICES; i++){
+		vs[i] = r.vs[i];
+	}
+	set_color(r.color);
+	return *this;  
 }
 
 ostream& operator << (ostream &out, const Rectangle &r) {
