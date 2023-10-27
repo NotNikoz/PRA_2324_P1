@@ -20,12 +20,19 @@ class Square : public Rectangle {
 
 		Square (); //Metodo constructor por defecto
 
-		Square (string color, Point2D*); //Metodo constructor
+		Square (string color, Point2D* vertices); //Metodo constructor
 
-		void set_vertices (Point2D* vertices); //Pondrá los vertices nuevos
+		void set_vertices (Point2D* vertices) override; //Pondrá los vertices nuevos
 
 		friend ostream& operator << (ostream &out, const Square &square); //Sobrecarga global del operador <<
+		
+                double area () const override;
 
+                double perimeter () const override ;
+
+                void translate (double incX, double incY) override;
+
+		void print () override;
 
 };
 

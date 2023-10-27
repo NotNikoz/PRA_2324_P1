@@ -72,7 +72,7 @@ ostream& operator << (ostream &out, const Circle &c) {
 
 	out << "[Circle: color = " << c.color << "; center = (" 
 		<< c.center.x << ", " << c.center.y << "); radius = " 
-		<< c.radius << "]" << endl;
+		<< c.radius << "]";
 
 	return out;
 
