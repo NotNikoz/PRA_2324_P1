@@ -26,13 +26,13 @@ Drawing :: ~Drawing() {
 
 void Drawing :: add_front (Shape* shape) {
 
-	shapes -> append (shape); //Agrega el objeto shape al frente de la lista shapes
+	shapes -> prepend (shape); //Agrega el objeto shape al frente de la lista shapes
 
 }
 
 void Drawing :: add_back (Shape* shape) {
 
-	shapes -> prepend (shape); //Agrega el objeto shape al fondo de la lista
+	shapes -> append (shape); //Agrega el objeto shape al fondo de la lista
 
 }
 
